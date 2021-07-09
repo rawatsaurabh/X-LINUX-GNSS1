@@ -1,1 +1,1 @@
-Follow the Documentation/Getting started with X-LINUX-GNSS1A1 package for developing GNSS Applications on Linux
+Follow the Documentation/Getting started with X-LINUX-GNSS1A1 package for developing GNSS Applications on Linux : 4.2

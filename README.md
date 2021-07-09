@@ -1,6 +1,6 @@
 # X-LINUX-GNSS1
 This package is for retrieving the GNSS NMEA data from X-Nucleo-GNSS1A1 plugged to the Arduino Connector of STM32MP157C-DK2 Discovery Board.All the code 
-runs on STM32MPU DK2 Board
+runs on STM32MPU DK2 Board . For detaield instructions refer Getting started with X-LINUX-GNSS1A1 package for developing GNSS Applications on Linux OS in the Documentation folder
 
 There are 4 code repos : 
 
@@ -19,7 +19,7 @@ This is the C code to read the uart data from /dev/ttySTM2
 
 **3.gnss_x_linux**
 
-This is the cross compiled code with STM32 Layers removed.This is derived from X-Cube-GNSS1A1 
+This is the cross compiled code with STM32 Layers removed.This is derived from X-CUBE-GNSS1A1 
 
 
 **Build  :**
