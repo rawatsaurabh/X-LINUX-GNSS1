@@ -1,1 +1,0 @@
-scp these dtbs to respective boards in case you dont want to build .These are pre-compiled dtbs with UART and i2c configuration enabled
