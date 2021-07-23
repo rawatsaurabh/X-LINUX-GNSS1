@@ -7,7 +7,7 @@
 
 
 
-#define TEST_MODE 0
+#define TEST_MODE 1
 #define PRINTF(...) if(TEST_MODE) printf(__VA_ARGS__)
 
 

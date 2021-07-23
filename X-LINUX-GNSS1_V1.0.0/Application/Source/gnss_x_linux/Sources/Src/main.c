@@ -1,23 +1,36 @@
-/* USER CODE BEGIN Header */
-/**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
+/******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * <h2><center>&copy; COPYRIGHT 2019 STMicroelectronics</center></h2>
   *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
+  * Licensed under ST MYLIBERTY SOFTWARE LICENSE AGREEMENT (the "License");
+  * You may not use this file except in compliance with the License.
+  * You may obtain a copy of the License at:
   *
-  ******************************************************************************
-  */
-/* USER CODE END Header */
-/* Includes ------------------------------------------------------------------*/
+  *        http://www.st.com/myliberty
+  *
+  * Unless required by applicable law or agreed to in writing, software
+  * distributed under the License is distributed on an "AS IS" BASIS,
+  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied,
+  * AND SPECIFICALLY DISCLAIMING THE IMPLIED WARRANTIES OF MERCHANTABILITY,
+  * FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+  *
+******************************************************************************/
+/*! \file main.c
+ *
+ *  \author Saurab RAWAT
+ *
+ *  \brief Sample Application to read the Teseo-LIV3F GNSS data from X-NUCLEO-GNSS1
+ * and upload it to ST Asset Tracking Dashboard
+ *
+ */
+/*
+ ******************************************************************************
+ * INCLUDES
+ ******************************************************************************
+ */
 #include "main.h"
 #include "app_gnss.h"
 #include <errno.h>
@@ -27,13 +40,18 @@
 #include <string.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
-
 #include <linux/gpio.h>
-static int gpiolib();
+static int GNSS_Reset();
+
+/*
+ ******************************************************************************
+ * MAIN FUNCTION
+ ******************************************************************************
+ */
 
 int main(void)
 {
-  gpiolib();
+  GNSS_Reset();
   MX_GNSS_Init();
   while (1)
   {
@@ -42,7 +60,7 @@ int main(void)
 }
 
 
-static int gpiolib()
+static int GNSS_Reset()
 {
 
   	struct gpiohandle_request req;

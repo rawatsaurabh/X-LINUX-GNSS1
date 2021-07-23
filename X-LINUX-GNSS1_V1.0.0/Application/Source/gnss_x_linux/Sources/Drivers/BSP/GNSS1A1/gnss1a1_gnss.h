@@ -64,6 +64,7 @@ int gnss_read_i2c(uint8_t *message);
 #if (USE_GNSS1A1_GNSS_TESEO_LIV3F == 1)
 #include "teseo_liv3f.h"
 #endif
+//extern int uart_fd;
 
 /** @addtogroup BSP BSP
  * @{

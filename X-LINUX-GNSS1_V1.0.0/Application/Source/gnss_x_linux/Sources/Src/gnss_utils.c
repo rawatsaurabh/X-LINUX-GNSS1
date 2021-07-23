@@ -90,7 +90,9 @@ void showCmds(void){
   PRINT_INFO(" 5 - debug\n\r");
   PRINT_INFO(" 6 - track\n\r");
   PRINT_INFO(" 7 - lasttrack\n\r");
+  #if 0 //To be taken in care in Next Release
   PRINT_INFO(" 8 - getfwver\n\r");
+  #endif 
   PRINT_INFO(" 9 - getgnsmsg\n\r");
   PRINT_INFO("10 - getgpgst\n\r");
   PRINT_INFO("11 - getgprmc\n\r");

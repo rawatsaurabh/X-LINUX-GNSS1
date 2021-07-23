@@ -129,6 +129,8 @@ void MX_GNSS_Init(void)
 
   /* Initialize the peripherals and the teseo device */
 
+  
+
  unsigned long epoch = (unsigned long)time(NULL) * 1000;
  epoch_tmp = epoch;
 
@@ -188,7 +190,7 @@ static void Background_Task_Init(void)
 static void Console_Parse_Task_Init(void)
 {
 
-   /* Create independent threads each of which will execute functionC */
+   /* Create independent threads each of which will execute function */
 
    if( (rc1=pthread_create( &consoleParseTaskHandle, NULL, ConsoleParseTask, NULL)) )
    {
@@ -245,7 +247,6 @@ uint8_t len;
     {
       continue;
     }
-#if 1
 
     len = strlen(message_buf_in);
 
@@ -331,11 +332,6 @@ uint8_t len;
         }
       }
     }
-
-
-#endif
-
-
  }
 }
 
@@ -385,7 +381,7 @@ static void *ConsoleParseTask(void *argument)
 
 
     showCmds();
-    scanf("%s",&cmd);
+    scanf("%s",cmd);
     AppCmdProcess(cmd);
 
   }
@@ -396,8 +392,6 @@ static void ConsoleRead(uint8_t *string)
 {
   int ch;
 
-//  while(1)
-  {
     ch = '\0';
 
     scanf("%d",&ch);
@@ -410,7 +404,6 @@ static void ConsoleRead(uint8_t *string)
     {
       PRINT_OUT("\n\r");
       string[strlen((char *)string)] = '\0';
-    //  break;
     }
     else
     {
@@ -418,7 +411,7 @@ static void ConsoleRead(uint8_t *string)
         string[strlen((char *)string)] = ch;
       }
     }
-  }
+  
 }
 
 static void AppCmdProcess(char *com)

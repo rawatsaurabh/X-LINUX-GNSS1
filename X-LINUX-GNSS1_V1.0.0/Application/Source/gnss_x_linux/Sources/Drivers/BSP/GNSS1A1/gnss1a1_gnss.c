@@ -123,11 +123,6 @@ static void GNSS1A1_GNSS_Rst(void);
  * @{
  */
 
-// __weak int32_t GNSS1A1_GNSS_GetTick(void)
-//{
- // return BSP_ERROR_NONE;
-//}
-
 
 int32_t GNSS1A1_GNSS_Init(uint32_t Instance)
 {
@@ -256,42 +251,20 @@ int gnss_read_i2c(uint8_t *message)
     int i;
     char read_buf[BUF_SIZE];
 
-     //unsigned char reg = 0x10; // Device register to access
-    //buf[0] = reg;
-  //  const char *gpgll_msg = "$PSTMNMEAREQUEST,100000,0\n\r";
-
-  //  if (write(i2c_fd,gpgll_msg,1) != 1) {
-        /* ERROR HANDLING: i2c transaction failed */
-    //    printf("Failed to write to the i2c bus.\n");
-       // buffer = g_strerror(errno);
-      //  printf("\n\n");
-  //  }
-
-  //  for(read_buf[BUF_SIZE] = 0;read_buf[180] != 0xff;) {
-        // Using I2C Read
-        if (read(i2c_fd,read_buf,BUF_SIZE) != 0) {
-            /* ERROR HANDLING: i2c transaction failed */
+    if (read(i2c_fd,read_buf,BUF_SIZE) != 0) {
             for(i = 0;i < BUF_SIZE ; i++)
             {
 		    if(read_buf[i] != 0xff)
         {
           message[i] = read_buf[i];
-		 //	printf("%c",read_buf[i]);
     }
   }
     message[i] = '\0';
-  //  strcpy( message, read_buf);
         } else {
             printf("Read failed");
         	}
-    //	}
 
-  //  strcpy( message, read_buf);
     status = strlen(message);
-  //  	printf("length == %d \n",strlen(message));
-  //    printf("length == %d \n",strlen(read_buf));
-
-  //  printf("\n");
     return status;
 }
 
@@ -347,6 +320,9 @@ int32_t GNSS1A1_GNSS_ReleaseMessage(uint32_t Instance, const GNSS1A1_GNSS_Msg_t 
 int32_t GNSS1A1_GNSS_Send(uint32_t Instance, const GNSS1A1_GNSS_Msg_t *Message)
 {
   int32_t ret;
+  
+
+  //ret = write (fd, Message->buf, Message->len);     
 
   return ret;
 }
@@ -428,8 +404,8 @@ void GNSS1A1_GNSS_BackgroundProcess(uint32_t Instance)
 #else
 #if (USE_AZRTOS_NATIVE_API)
   tx_thread_sleep(((TX_TIMER_TICKS_PER_SECOND / 100)));  // wait 10mS /* SO: not sure it is required */
-#endif /* USE_AZRTOS_NATIVE_API */
-#endif /* USE_FREE_RTOS_NATIVE_API */
+#endif 
+#endif 
 }
 
 /**
@@ -459,88 +435,9 @@ static int32_t TESEO_LIV3F_Probe(void)
 
 static void GNSS1A1_GNSS_Rst(void)
 {
-  //printf("Caaling the gpiolib");
-  //  gpiolib();
+   // gpiolib();
 }
-#if 0
-static void GNSS1A1_GNSS_RegisterCallbacks(void)
-{
-#if (USE_I2C == 1)
-
-#if (USE_HAL_I2C_REGISTER_CALLBACKS == 1)
-  // FIXME: check the return value instead
-  (void)GNSS1A1_RegisterRxCb(GNSS1A1_GNSS_I2C_RxCb);
-  (void)GNSS1A1_RegisterErrorCb(GNSS1A1_GNSS_I2C_ErrorCb);
-  (void)GNSS1A1_RegisterAbortCb(GNSS1A1_GNSS_I2C_AbortCb);
-#endif /* USE_HAL_I2C_REGISTER_CALLBACKS */
-
-#else
-
-#if (USE_HAL_UART_REGISTER_CALLBACKS == 1)
-  // FIXME: check the return value instead
- // (void)GNSS1A1_RegisterRxCb(GNSS1A1_GNSS_UART_RxCb);
-// (void)GNSS1A1_RegisterErrorCb(GNSS1A1_GNSS_UART_ErrorCb);
-#endif /* USE_HAL_UART_REGISTER_CALLBACKS */
-
-#endif /* USE_I2C */
-}
-
-#if (USE_I2C == 1)
-
-#if (USE_HAL_I2C_REGISTER_CALLBACKS == 1)
-void GNSS1A1_GNSS_I2C_RxCb(I2C_HandleTypeDef *hi2c)
-{
-  (void)(hi2c);
-  TESEO_LIV3F_I2C_RxCb();
-}
-
-void GNSS1A1_GNSS_I2C_ErrorCb(I2C_HandleTypeDef *hi2c)
-{
-  (void)(hi2c);
-  TESEO_LIV3F_I2C_ErrorCb();
-}
-
-void GNSS1A1_GNSS_I2C_AbortCb(I2C_HandleTypeDef *hi2c)
-{
-  (void)(hi2c);
-  TESEO_LIV3F_I2C_AbortCb();
-}
-#endif /* USE_HAL_I2C_REGISTER_CALLBACKS */
-
-#else
-
-#if (USE_HAL_UART_REGISTER_CALLBACKS == 1)
-void GNSS1A1_GNSS_UART_RxCb(UART_HandleTypeDef *huart)
-{
-  (void)(huart);
-  TESEO_LIV3F_UART_RxCb();
-}
-
-void GNSS1A1_GNSS_UART_ErrorCb(UART_HandleTypeDef *huart)
-{
-  (void)(huart);
-  TESEO_LIV3F_UART_ErrorCb();
-}
-#endif /* USE_HAL_UART_REGISTER_CALLBACKS */
-#endif
-#endif /* USE_I2C */
-
 #endif
 
-/**
- * @}
- */
-
-/**
- * @}
- */
-
-/**
- * @}
- */
-
-/**
- * @}
- */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

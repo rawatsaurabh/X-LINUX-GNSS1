@@ -1,0 +1,1 @@
+Flash this file to get the pre-built gnss_app inside /usr/bin.

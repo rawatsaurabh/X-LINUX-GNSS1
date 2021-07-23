@@ -46,6 +46,7 @@
 #include "gnss_lib_config.h"
 #include "gnss1a1_gnss.h"
 
+
 int32_t GNSS_Wrapper_Send(uint8_t *buffer, uint16_t length)
 {
   int32_t status=0;
@@ -55,7 +56,9 @@ int32_t GNSS_Wrapper_Send(uint8_t *buffer, uint16_t length)
   gnssMsg.buf = buffer;
   gnssMsg.len = length;
 
-  status = GNSS1A1_GNSS_Send(GNSS1A1_TESEO_LIV3F, &gnssMsg);
+  //status = GNSS1A1_GNSS_Send(GNSS1A1_TESEO_LIV3F, &gnssMsg);
+  //status = GNSS1A1_GNSS_Send(uart_fd, &gnssMsg);
+
 
   return status;
 }
