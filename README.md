@@ -14,7 +14,8 @@ X-LINUX-GNSS1 software features:
 • Python example to read the NMEA data over UART
 
 
-![image](https://user-images.githubusercontent.com/8255773/199159792-141395c2-5464-4870-9770-633b9983aa09.png)
+![image](https://user-images.githubusercontent.com/8255773/199161263-892e6251-8ffb-4209-b424-18e6c9cb7ea7.png)
+
 
 
 Code Directories :
