@@ -18,7 +18,7 @@ X-LINUX-GNSS1 software features:
 
 
 
-Code Directories :
+Source Code Directories :
 ==============================================================================================================
 
 There are 4 code directory :
@@ -30,7 +30,7 @@ This is the C code to read the i2c data from /dev/i2c-1
 2.gnss_python
 
 This is the python code to read the GNSS Data over uart using Python Script.It uses pynmea2 Library. 
-You need to install the pyserial and pynmea2 before using this.
+Install the pyserial and pynmea2 before using this.
 
 3.gnss_uart
 
@@ -52,9 +52,8 @@ https://wiki.st.com/stm32mpu/wiki/PC_prerequisites
 Build :
 ==============================================================================================================
 
-Make sure to source the build environment for STM32MP1-DK2 board ( the step you do while Building kernel) 
-Go into each of the code directory and run Make.Respective binary will be generated. For python code you can
-directly transfer it to STM32MP1-DK2 board 
+Make sure to source the build environment for STM32MP1-DK2 board.
+Go into each of the code directory and run Make.Respective binary will be generated. For python code ,python files can be transferred to STM32MP1-DK2 board 
 
 
 Deploy :
@@ -72,15 +71,14 @@ Run the python code using command : python3 gnss_pynmea2.py
 Pre-built Binaries:
 ==============================================================================================================
 
-You can Find the Pre-built Binaries inside : Application\Binaries
+Pre-built Binaries inside : Application\Binaries
   
 Related Information and Documentation:
 ==============================================================================================================
 
-  -X-NUCLEO-GNSS2A1 : https://www.st.com/content/ccc/resource/technical/document/user_manual/group2/07/81/7e/35/df/3d/45/91/DM00875974/files/DM00875974.pdf/jcr:content/translations/en.DM00875974.pdf
- 
 - [X-LINUX-GNSS1](https://www.st.com/en/embedded-software/x-linux-gnss1.html)
 - [X-NUCLEO-GNSS1A1](https://www.st.com/en/ecosystems/x-nucleo-gnss1a1.html)
+- [X-NUCLEO-GNSS1A1](https://www.st.com/en/ecosystems/x-nucleo-gnss2a1.html)
 - [Getting Started with X-LINUX-GNSS1](https://www.st.com/content/ccc/resource/technical/document/user_manual/group0/00/bd/07/b2/84/29/46/4f/DM00460180/files/DM00460180.pdf/jcr:content/translations/en.DM00460180.pdf)
 - [STM32 Nucleo boards](http://www.st.com/stm32nucleo)
 - [STM32MPU Wiki](https://wiki.st.com/stm32mpu/wiki/Main_Page)
