@@ -78,8 +78,10 @@ Related Information and Documentation:
 ==============================================================================================================
 
   -X-NUCLEO-GNSS2A1 : https://www.st.com/content/ccc/resource/technical/document/user_manual/group2/07/81/7e/35/df/3d/45/91/DM00875974/files/DM00875974.pdf/jcr:content/translations/en.DM00875974.pdf
-  -X-NUCLEO-GNSS1A1
-  -X-LINUX-GNSS1 https://www.st.com/en/embedded-software/x-linux-gnss1.html
-  - STM32 MPU Wiki : https://wiki.st.com/stm32mpu/wiki/Main_Page
-  
+ 
+- [X-LINUX-GNSS1](https://www.st.com/en/embedded-software/x-linux-gnss1.html)
+- [X-NUCLEO-GNSS1A1](https://www.st.com/en/ecosystems/x-nucleo-gnss1a1.html)
+- [Getting Started with X-LINUX-GNSS1](https://www.st.com/content/ccc/resource/technical/document/user_manual/group0/00/bd/07/b2/84/29/46/4f/DM00460180/files/DM00460180.pdf/jcr:content/translations/en.DM00460180.pdf)
+- [STM32 Nucleo boards](http://www.st.com/stm32nucleo)
+- [STM32MPU Wiki](https://wiki.st.com/stm32mpu/wiki/Main_Page)
   
